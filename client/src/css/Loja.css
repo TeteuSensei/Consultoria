@@ -1,0 +1,95 @@
+.loja-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    text-align: center;
+}
+
+.loja-banner {
+    background-image: url('F:\Matheus\Estudos\Aplicacao_consultoria\client\public\Imagens\consutoria1.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 50px 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.categorias {
+    margin: 40px 0;
+}
+
+.categorias-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.categoria-card {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.categoria-card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.produtos-destaque {
+    margin: 40px 0;
+}
+
+.produtos-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.produto-card {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.produto-card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.btn-comprar {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-comprar:hover {
+    background-color: #0056b3;
+}
+
+.promocao {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-promocao {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-promocao:hover {
+    background-color: #e64a19;
+}

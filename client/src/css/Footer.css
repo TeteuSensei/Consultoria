@@ -1,0 +1,80 @@
+/* Rodapé Geral */
+.footer {
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+/* Seções do Rodapé */
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #007bff;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #007bff;
+}
+
+/* Informações de Contato */
+.footer-socials {
+    margin-top: 10px;
+}
+
+.footer-socials h4 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.social-icons a {
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 1em;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #0056b3;
+}
+
+/* Direitos Reservados */
+.footer-bottom {
+    text-align: center;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 0.9em;
+}

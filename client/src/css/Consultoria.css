@@ -1,0 +1,145 @@
+/* Página de Consultoria */
+.consultoria-page {
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* Banner com imagem de fundo */
+.consultoria-banner {
+    position: relative;
+    height: 100vh; /* Ocupa toda a altura da tela */
+    background: url("F:\Matheus\Estudos\Aplicacao_consultoria\client\public\Imagens\consutoria1.jpg") no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    padding: 20px;
+}
+
+/* Sobreposição do conteúdo */
+.overlay-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    width: 100%;
+    background: rgba(000, 0, 0, 0.622); /* Fundo semi-transparente */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Informações na esquerda */
+.consultoria-info {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.consultoria-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.consultoria-info p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.consultoria-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.consultoria-info li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Formulário na direita */
+.consultoria-form {
+    flex: 1;
+    background: #000;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    color: #fff;
+}
+
+.consultoria-form h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #222;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.phone-input {
+    display: flex;
+    align-items: center;
+}
+
+.phone-input .flag {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.btn-primary {
+    width: 100%;
+    background-color: #e63946;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #d62839;
+    transform: scale(1.05);
+}
+
+.form-note {
+    font-size: 0.8rem;
+    color: #ccc;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .overlay-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .consultoria-info {
+        margin-right: 0;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .consultoria-form {
+        width: 100%;
+    }
+}
