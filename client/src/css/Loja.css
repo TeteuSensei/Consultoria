@@ -1,95 +1,237 @@
-.loja-container {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    text-align: center;
-}
+/* Loja.css */
 
-.loja-banner {
-    background-image: url('F:\Matheus\Estudos\Aplicacao_consultoria\client\public\Imagens\consutoria1.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 50px 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-.categorias {
-    margin: 40px 0;
-}
-
-.categorias-container {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-}
-
-.categoria-card {
-    text-align: center;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.categoria-card img {
-    max-width: 100%;
-    border-radius: 8px;
-}
-
-.produtos-destaque {
-    margin: 40px 0;
-}
-
-.produtos-container {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-}
-
-.produto-card {
-    text-align: center;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.produto-card img {
-    max-width: 100%;
-    border-radius: 8px;
-}
-
-.btn-comprar {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.btn-comprar:hover {
-    background-color: #0056b3;
-}
-
-.promocao {
+/* Estilos gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     background-color: #f9f9f9;
+  }
+  
+  .loja-container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.btn-promocao {
-    background-color: #ff5722;
+  }
+  
+  h1, h2 {
+    text-align: center;
+    color: #2575fc;
+    font-weight: bold;
+  }
+  
+  p {
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.6;
+  }
+  
+  /* Banner principal */
+  .loja-banner {
+    background: linear-gradient(to right, rgba(106, 17, 203, 0.9), rgba(37, 117, 252, 0.9));
     color: white;
+    padding: 60px 30px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .loja-banner h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+  }
+  
+  .loja-banner p {
+    font-size: 1.4rem;
+  }
+  
+  /* Categorias */
+  .categorias {
+    margin: 50px 0;
+  }
+  
+  .categorias-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+  
+  .categoria-card {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 260px;
+  }
+  
+  .categoria-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .categoria-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .categoria-card h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Produtos em destaque */
+  .produtos-destaque {
+    margin: 50px 0;
+  }
+  
+  .produtos-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+  
+  .produto-card {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 220px;
+  }
+  
+  .produto-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .produto-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .produto-card h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .produto-card p {
+    color: #2575fc;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+  }
+  
+  .btn-comprar {
+    background: #2575fc;
+    color: white;
+    padding: 12px 20px;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    margin-top: 10px;
-}
-
-.btn-promocao:hover {
-    background-color: #e64a19;
-}
+    font-size: 1rem;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-comprar:hover {
+    background: #6a11cb;
+  }
+  
+  /* Promoção */
+  .promocao {
+    text-align: center;
+    background: rgba(37, 117, 252, 0.1);
+    padding: 50px 30px;
+    border-radius: 12px;
+    margin: 50px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .promocao h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .promocao p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    color: #555;
+  }
+  
+  .btn-promocao {
+    background: #2575fc;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-promocao:hover {
+    background: #6a11cb;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .categorias-container,
+    .produtos-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .categoria-card,
+    .produto-card {
+      width: 90%;
+    }
+  
+    .loja-banner h1 {
+      font-size: 2rem;
+    }
+  
+    .loja-banner p {
+      font-size: 1rem;
+    }
+  }
+  
+  .secoes-navegacao {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .secao-link {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #2575fc;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .secao-link:hover {
+    color: #6a11cb;
+  }
+  

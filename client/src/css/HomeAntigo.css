@@ -1,0 +1,259 @@
+.home-header {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.header-content p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.banner-rotativo {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Seção de Funcionalidades */
+.features {
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+    max-width: 1200px; /* Limita a largura da seção */
+    margin: 0 auto; /* Centraliza a seção */
+}
+
+/* Layout de Vídeos */
+.video-player {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Arredonda as bordas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve */
+}
+
+
+
+.videos-layout {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: center; /* Centraliza o layout */
+}
+
+/* Vídeo maior à esquerda */
+.video-large {
+    flex: 2; /* Ocupa 2 partes */
+    max-width: 600px; /* Limita a largura máxima */
+}
+
+.video-large iframe {
+    width: 100%;
+    height: 300px; /* Define a altura */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Vídeos menores à direita */
+.videos-small {
+    flex: 2; /* Ocupa 3 partes */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+    grid-template-rows: auto auto; /* 2 linhas */
+    gap: 10px;
+    max-width: 400px; /* Limita a largura máxima */
+}
+
+.video-small {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.video-small iframe {
+    width: 100%;
+    height: 140px; /* Altura consistente para vídeos pequenos */
+    border-radius: 8px;
+}
+
+.video-small-wide {
+    grid-column: span 2; /* Ocupa a largura total de 2 colunas */
+}
+
+/* Ajustes para responsividade */
+@media (max-width: 768px) {
+    .videos-layout {
+        flex-direction: column; /* Coloca os vídeos em coluna em telas pequenas */
+    }
+
+    .video-large iframe {
+        height: 200px; /* Reduz a altura do vídeo maior em telas pequenas */
+    }
+
+    .videos-small {
+        grid-template-columns: 1fr; /* Apenas 1 vídeo por linha */
+        grid-template-rows: auto; /* Ajusta automaticamente */
+    }
+
+    .video-small iframe {
+        height: 120px; /* Altura menor para vídeos pequenos */
+    }
+
+    .product-carousel {
+        flex-wrap: wrap; /* Permite quebra de linha para produtos */
+    }
+}
+
+
+/* Seção de Podcast */
+.podcast-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.podcast-section h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.podcast-section p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+/* Layout da Seção de Podcast */
+.podcast-layout {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Imagem maior à esquerda */
+.podcast-large {
+    flex: 2;
+    max-width: 600px;
+    aspect-ratio: 16 / 9; /* Mantém proporção */
+    overflow: hidden; /* Corta partes excedentes da imagem */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.podcast-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta o conteúdo sem distorcer */
+    border-radius: 8px;
+}
+
+/* Imagens menores à direita */
+.podcast-small {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.podcast-small img {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Mantém proporção */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Seção de Consultorias */
+.consultorias-section {
+    position: relative;
+    padding: 60px 20px;
+    text-align: center;
+    background: url('F:\Matheus\Estudos\Aplicacao_consultoria\client\public\Imagens\consutoria.jpg') no-repeat center center/cover; /* Insira o caminho da imagem de fundo */
+    color: white; /* Cor do texto para contraste */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px; /* Altura mínima */
+}
+
+.consultorias-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Sobreposição escura para contraste */
+    z-index: 0;
+}
+
+.consultorias-content {
+    position: relative;
+    z-index: 1; /* Garante que o conteúdo fique acima da sobreposição */
+    max-width: 600px; /* Limita a largura do conteúdo */
+}
+
+.consultorias-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.consultorias-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.btn-consultoria {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-consultoria:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.btn-consultoria:active {
+    transform: scale(1);
+}
