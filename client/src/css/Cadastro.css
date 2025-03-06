@@ -1,0 +1,67 @@
+.login-container {
+    width: 90%; /* Ajusta para telas menores */
+    max-width: 400px; /* Evita que o formulário fique muito grande */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.85); /* Fundo levemente translúcido */
+    backdrop-filter: blur(8px); /* Efeito de desfoque no fundo */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    margin: 50px auto;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os elementos */
+    width: 100%;
+  }
+  
+  label {
+    width: 100%; /* Faz a label ocupar toda a largura disponível */
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #444;
+  }
+  
+  input, select {
+    width: 100%; /* Faz os inputs ocuparem a largura correta dentro do container */
+    max-width: 300px; /* Define um tamanho máximo */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1); /* Efeito sutil */
+  }
+  
+  button {
+    width: 100%; /* Faz o botão ocupar a largura total do container */
+    max-width: 300px;
+    margin-top: 10px;
+    padding: 12px;
+    font-size: 16px;
+    background: #007bff;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background: #0056b3;
+  }
+  
+  .error {
+    color: red;
+    margin-top: 10px;
+  }
