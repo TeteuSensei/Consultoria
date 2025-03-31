@@ -1,6 +1,5 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/database");
-const Usuario = require("./Usuario");
 
 const Treino = sequelize.define("Treino", {
   nome: {
@@ -8,16 +7,17 @@ const Treino = sequelize.define("Treino", {
     allowNull: false,
   },
   descricao: {
-    type: DataTypes.TEXT,
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  data: {
+    type: DataTypes.DATEONLY, // ✅ Garante que a data será salva corretamente
+    allowNull: false,
   },
   id_personal: {
     type: DataTypes.INTEGER,
-    references: {
-      model: Usuario,
-      key: "id",
-    },
+    allowNull: false,
   },
 });
 
 module.exports = Treino;
-

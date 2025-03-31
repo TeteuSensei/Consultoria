@@ -24,9 +24,8 @@ import TrapezioInferior from "./js/Treino/TrapezioInferior";
 import Triceps from "./js/Treino/Triceps";
 import WorkoutGenerator from "./js/WorkoutGenerator";
 import Login from "./js/Login";
-import Casdatro from "./js/Cadastro";
+
 import Dashboard from "./js/Dashboard";
-import CasdatroTreino from "./js/CadastroTreino";
 
 
 
@@ -55,7 +54,7 @@ function App() {
                 <Route path="/Cadastro" element={<Cadastro/>} />
                 <Route path="/CadastroTreino" element={<CadastroTreino/>} />
                 <Route path="/Dashboard" element={<Dashboard/>} />
-
+              
 
                 <Route path="/Teste" element={<Teste/>} />
                

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "../css/Dashboard.css";
 
 const Dashboard = () => {
@@ -9,16 +10,27 @@ const Dashboard = () => {
 
   useEffect(() => {
     // Verifica se o usuário está autenticado
-    const storedUser = JSON.parse(localStorage.getItem("loggedUser"));
+    const storedUser = JSON.parse(localStorage.getItem("usuario"));
     if (!storedUser) {
       navigate("/login");
     } else {
       setUser(storedUser);
     }
 
-    // Simula a busca de treinos cadastrados (pode ser integrado ao banco no futuro)
-    const storedTreinos = JSON.parse(localStorage.getItem("treinos")) || [];
-    setTreinos(storedTreinos);
+    // Buscar treinos do banco de dados
+    const fetchTreinos = async () => {
+      try {
+        const token = localStorage.getItem("token"); // Pega o token salvo
+        const response = await axios.get("http://localhost:3001/api/treinos", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        setTreinos(response.data);
+      } catch (error) {
+        console.error("Erro ao buscar treinos:", error);
+      }
+    };
+
+    fetchTreinos();
   }, [navigate]);
 
   return (
@@ -27,14 +39,14 @@ const Dashboard = () => {
         <h3>Menu</h3>
         <ul>
           <li onClick={() => navigate("/consultoria")}>📋 Consultoria</li>
-          <li onClick={() => navigate("/treinamento")}>🏋️ Treinos</li>
+          <li onClick={() => navigate("/treinamento")}>🏋️ Exercícios</li>
           <li onClick={() => navigate("/loja")}>🛍️ Loja</li>
           <li onClick={() => navigate("/perfil")}>👤 Meu Perfil</li>
         </ul>
       </aside>
 
       <main className="dashboard-content">
-        <h2>Bem-vindo, {user?.username}!</h2>
+        <h2>Bem-vindo, {user?.nome}!</h2>
 
         {/* Cards informativos */}
         <div className="cards">
@@ -66,9 +78,9 @@ const Dashboard = () => {
                   <tr key={index}>
                     <td>{treino.nome}</td>
                     <td>{treino.objetivo}</td>
-                    <td>{treino.data}</td>
+                    <td>{new Date(treino.data).toLocaleDateString()}</td>
                     <td>
-                      <button onClick={() => navigate(`/treino/${index}`)}>Ver</button>
+                      <button onClick={() => navigate(`/treino/${treino.id}`)}>Ver</button>
                     </td>
                   </tr>
                 ))

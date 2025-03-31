@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "../css/CadastroTreino.css";
 
 const CadastroTreino = () => {
@@ -8,19 +9,33 @@ const CadastroTreino = () => {
   const [data, setData] = useState("");
   const [exercicios, setExercicios] = useState([]);
   const [treinoSelecionado, setTreinoSelecionado] = useState([]);
+  const [mensagem, setMensagem] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Busca exercícios cadastrados no localStorage
-    const storedExercicios = JSON.parse(localStorage.getItem("exercicios")) || [];
-    setExercicios(storedExercicios);
+    const carregarExercicios = async () => {
+      try {
+        const response = await fetch("http://localhost:3001/api/exercicios", {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`
+          }
+        });
+        const data = await response.json();
+        setExercicios(data);
+      } catch (error) {
+        console.error("Erro ao carregar exercícios:", error);
+      }
+    };
+  
+    carregarExercicios();
   }, []);
+  
 
   const handleSelecionarExercicio = (exercicio) => {
     setTreinoSelecionado([...treinoSelecionado, exercicio]);
   };
 
-  const handleCadastroTreino = (e) => {
+  const handleCadastroTreino = async (e) => {
     e.preventDefault();
 
     if (!nomeTreino || !objetivo || treinoSelecionado.length === 0) {
@@ -28,19 +43,27 @@ const CadastroTreino = () => {
       return;
     }
 
-    const novoTreino = {
-      nome: nomeTreino,
-      objetivo,
-      data,
-      exercicios: treinoSelecionado,
-    };
+    try {
+      const token = localStorage.getItem("token");
+      await axios.post(
+        "http://localhost:3001/api/treinos",
+        {
+          nome: nomeTreino,
+          descricao: objetivo,
+          data,
+          exercicios: treinoSelecionado.map((ex) => ex.id),
+        },
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
 
-    const storedTreinos = JSON.parse(localStorage.getItem("treinos")) || [];
-    storedTreinos.push(novoTreino);
-    localStorage.setItem("treinos", JSON.stringify(storedTreinos));
-
-    alert("Treino cadastrado com sucesso!");
-    navigate("/dashboard");
+      setMensagem("Treino cadastrado com sucesso!");
+      setTimeout(() => navigate("/dashboard"), 1500);
+    } catch (error) {
+      setMensagem("Erro ao cadastrar treino.");
+      console.error("Erro:", error);
+    }
   };
 
   return (
@@ -59,8 +82,8 @@ const CadastroTreino = () => {
         <h3>Selecione os Exercícios:</h3>
         <ul className="lista-exercicios">
           {exercicios.length > 0 ? (
-            exercicios.map((exercicio, index) => (
-              <li key={index}>
+            exercicios.map((exercicio) => (
+              <li key={exercicio.id}>
                 {exercicio.nome} - {exercicio.grupoMuscular}
                 <button type="button" onClick={() => handleSelecionarExercicio(exercicio)}>Adicionar</button>
               </li>
@@ -78,6 +101,7 @@ const CadastroTreino = () => {
         </ul>
 
         <button type="submit">Cadastrar Treino</button>
+        {mensagem && <p>{mensagem}</p>}
       </form>
     </div>
   );
